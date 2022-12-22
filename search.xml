@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Lixu</title>
+      <link href="/2022/12/22/Lixu-index/"/>
+      <url>/2022/12/22/Lixu-index/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-基础命令"><a href="#1-基础命令" class="headerlink" title="1.基础命令"></a>1.基础命令</h1><h3 id="1-1查看硬盘剩余内存空间"><a href="#1-1查看硬盘剩余内存空间" class="headerlink" title="1.1查看硬盘剩余内存空间"></a>1.1查看硬盘剩余内存空间</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>My img</title>
       <link href="/2022/12/21/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B-pic-bed/"/>
       <url>/2022/12/21/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B-pic-bed/</url>
