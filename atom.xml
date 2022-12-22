@@ -6,7 +6,7 @@
   <link href="https://atopos9.github.io/atom.xml" rel="self"/>
   
   <link href="https://atopos9.github.io/"/>
-  <updated>2022-12-22T06:46:17.681Z</updated>
+  <updated>2022-12-22T07:09:06.093Z</updated>
   <id>https://atopos9.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://atopos9.github.io/2022/12/22/Lixu-index/"/>
     <id>https://atopos9.github.io/2022/12/22/Lixu-index/</id>
     <published>2022-12-22T10:09:19.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-基础命令"><a href="#1-基础命令" class="headerlink" title="1.基础命令"></a>1.基础命令</h1><h3 id="1-1查看硬盘剩余内存空间"><a href="#1-1查看硬盘剩余内存空间" class="headerlink" title="1.1查看硬盘剩余内存空间"></a>1.1查看硬盘剩余内存空间</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -41,7 +41,7 @@
     <link href="https://atopos9.github.io/2022/12/21/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B-pic-bed/"/>
     <id>https://atopos9.github.io/2022/12/21/%E5%9B%BE%E5%BA%8A%E6%95%99%E7%A8%8B-pic-bed/</id>
     <published>2022-12-21T15:29:45.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     <content type="html"><![CDATA[<h1 id="1-基于github的图床-转载大佬Fomalhaut，侵权删"><a href="#1-基于github的图床-转载大佬Fomalhaut，侵权删" class="headerlink" title="1.基于github的图床(转载大佬Fomalhaut，侵权删)"></a>1.基于github的图床(转载大佬Fomalhaut，侵权删)</h1><blockquote><p>优点：</p><blockquote><p>很稳定不会跑路，用的是自己的仓库和公共托管平台<br>图片可以增量快速更新和跨设备管理<br>可以进行版本管理和查看之前的版本<br>有公共CDN，速度还是不错的<br>资源格式可以任意都行，包括css、js等</p></blockquote><p>缺点：</p><blockquote><p>每个仓库限制1G，超过要新建另一个仓库<br>git管理可能偶尔会遇到网络和公钥失效问题</p></blockquote><hr></blockquote><h3 id="1-1建立github仓库"><a href="#1-1建立github仓库" class="headerlink" title="1.1建立github仓库"></a>1.1建立github仓库</h3><ol><li>进入Github官网注册并登录自己的账号，到自己的个人主页，点击右上角的+，并选择New Repository创建自己的仓库。<br>  <img src="https://img.glmje.com/i/2022/12/21/qyldyn.png" alt="截图"></li><li>仓库名字随意，描述也可以自由发挥，可见性最好选public，Readme文件可以创建，然后点击Create Repository创建仓</li><li>让你的计算机与Github建立通信，这部分可以参考Hexo <a href="https://www.fomal.cc/posts/e593433d.html">博客搭建基础教程 (一) 转载的大佬 Fomalhaut</a> 的第7点，主要是创建公钥、上传公钥、检查通信这几步，确保计算机有权限访问远程仓库，所述教程是用的RSA公钥，目前更推荐ed25519公钥，该数字签名算法的签名和验证的性能都极⾼，具体教程百度这里不再赘述。<br><img src="https://img.glmje.com/i/2022/12/21/sflb1k.png" alt="截图"></li><li>先在本地创建一个文件夹，文件夹位置和名字随意就可以，进入该文件夹后右键打开Git Bash，然后输入以下代码把之前创建的仓库拷贝下来，其中git clone后面的东西要替换成自己的仓库信息，可以通过自己仓库的ssh链接来获取。    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:Atopos9/pic_bed.git</span><br></pre></td></tr></table></figure><img src="https://tudingtu.cn/i/2022/12/21/shev0g.png" alt="截图"><br><img src="https://tudingtu.cn/i/2022/12/21/shet2g.png" alt="截图"><br>看到上图的信息就代表成功把整个仓库拷贝到当前文件夹了，此时我们可以看见自己的文件夹多了个.git文件夹和Readme.md文件，这就代表成功了。<br><img src="https://tudingtu.cn/i/2022/12/21/shf273.png" alt="截图"></li><li>此时我们最好在这个文件夹里面创建创建一个img文件夹专门存放图片，如果有存放其他类型资源的可以创建别的文件夹，比如现在想往仓库里加两张图，直接就把图片复制到img文件夹里面即可。<br><img src="https://tudingtu.cn/i/2022/12/21/sles7b.png" alt="截图"><br>然后在带有Readme.md文件的那个文件夹内，右键打开Git Bash（注意看清楚是什么文件夹），然后依次输入以下命令把更改推送到远程仓库，最后一步不成功可能要多试几次。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 将更改提交</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;更新图片&quot;</span><br><span class="line"># 推送至github仓库</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>最后看见如下信息就代表推送成功了<br><img src="https://tudingtu.cn/i/2022/12/21/slf3kx.png" alt="截图"><br>仓库此时应该也有了刚刚上传的资源了<br><img src="https://tudingtu.cn/i/2022/12/21/slf7ip.png" alt="截图"><br>下次增删图片或者其他东西，就这样照猫画虎就可以推上来更新仓库！</li></ol><h3 id="1-2-Staticaly-CDN加速"><a href="#1-2-Staticaly-CDN加速" class="headerlink" title="1.2 Staticaly CDN加速"></a>1.2 Staticaly CDN加速</h3><p>直接访问Github仓库的资源是非常慢的！因此我们要用一些免费的CDN进行加速，Staticaly CDN是目前免费CDN中比较好用的啦，他的应用规则如下：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 格式 其中 user是用户名  repo是仓库名  version代表版本(tag或者分支 默认为main)  flie是文件路径 </span><br><span class="line">https://cdn.staticaly.com/gh/user/repo@version/file</span><br><span class="line"></span><br><span class="line"># 比如我的示例仓库就是加速地址就是这个大家可以参考参考</span><br><span class="line">https://cdn.staticaly.com/gh/Atopos9/pic_bed@main/img/default_cover_1.jpg</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -63,7 +63,7 @@
     <link href="https://atopos9.github.io/2022/12/20/Mysql-insert/"/>
     <id>https://atopos9.github.io/2022/12/20/Mysql-insert/</id>
     <published>2022-12-20T17:29:19.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     
     
@@ -78,7 +78,7 @@
     <link href="https://atopos9.github.io/2022/12/20/Mysql-update/"/>
     <id>https://atopos9.github.io/2022/12/20/Mysql-update/</id>
     <published>2022-12-20T17:28:43.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     <content type="html"><![CDATA[<div class="note default simple"><p>李致辰好儿子</p></div><div class="timeline blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>时间轴样式</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-07-24 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases">2.6.6 -&gt; 3.0</a></p></div></div><div class='timeline-item-content'><ol><li>如果有 <code>hexo-lazyload-image</code> 插件，需要删除并重新安装最新版本，设置 <code>lazyload.isSPA: true</code>。</li><li>2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 <code>use_cdn: true</code> 则需要删除。</li><li>2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。</li><li>2.x 版本的置顶 <code>top: true</code> 改为了 <code>pin: true</code>，并且同样适用于 <code>layout: page</code> 的页面。</li><li>如果使用了 <code>hexo-offline</code> 插件，建议卸载，3.0 版本默认开启了 pjax 服务。</li></ol></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-05-15 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6">2.6.3 -&gt; 2.6.6</a></p></div></div><div class='timeline-item-content'><p>不需要额外处理。</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-04-20 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.2 -&gt; 2.6.3</a></p></div></div><div class='timeline-item-content'><ol><li>全局搜索 <code>seotitle</code> 并替换为 <code>seo_title</code>。</li><li>group 组件的索引规则有变，使用 group 组件的文章内，<code>group: group_name</code> 对应的组件名必须是 <code>group_name</code>。</li><li>group 组件的列表名优先显示文章的 <code>short_title</code> 其次是 <code>title</code>。</li></ol></div></div></div>]]></content>
     
@@ -102,7 +102,7 @@
     <link href="https://atopos9.github.io/2022/12/20/Mysql-delete/"/>
     <id>https://atopos9.github.io/2022/12/20/Mysql-delete/</id>
     <published>2022-12-20T17:28:33.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     <content type="html"><![CDATA[<h2 id="大家好"><a href="#大家好" class="headerlink" title="大家好"></a>大家好</h2><div class="note default simple"><p>李致辰好儿子</p></div>]]></content>
     
@@ -128,7 +128,7 @@
     <link href="https://atopos9.github.io/2022/12/20/Mysql-select/"/>
     <id>https://atopos9.github.io/2022/12/20/Mysql-select/</id>
     <published>2022-12-20T17:28:22.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     
     
@@ -145,8 +145,15 @@
     <link href="https://atopos9.github.io/2022/12/20/Java-springboot/"/>
     <id>https://atopos9.github.io/2022/12/20/Java-springboot/</id>
     <published>2022-12-20T17:27:43.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="同步更新测试"><a href="#同步更新测试" class="headerlink" title="同步更新测试"></a>同步更新测试</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;同步更新测试&quot;&gt;&lt;a href=&quot;#同步更新测试&quot; class=&quot;headerlink&quot; title=&quot;同步更新测试&quot;&gt;&lt;/a&gt;同步更新测试&lt;/h1&gt;</summary>
+      
     
     
     
@@ -162,7 +169,7 @@
     <link href="https://atopos9.github.io/2022/12/20/Java-springcloud/"/>
     <id>https://atopos9.github.io/2022/12/20/Java-springcloud/</id>
     <published>2022-12-20T17:26:03.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     
     
@@ -179,7 +186,7 @@
     <link href="https://atopos9.github.io/2022/12/20/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
     <id>https://atopos9.github.io/2022/12/20/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</id>
     <published>2022-12-20T10:41:59.000Z</published>
-    <updated>2022-12-22T06:46:17.681Z</updated>
+    <updated>2022-12-22T07:09:06.093Z</updated>
     
     <content type="html"><![CDATA[<h2 id="这是第一篇文章"><a href="#这是第一篇文章" class="headerlink" title="这是第一篇文章"></a>这是第一篇文章</h2><div class="note default simple"><p>李致辰好儿子</p></div>]]></content>
     
